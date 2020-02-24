@@ -1,0 +1,2 @@
+# ProtienSequencer
+Software Engineering Project
