@@ -1,15 +1,25 @@
-# importing functions used in the files
-from rituparna import isProtienValid, splitSequence, findAcid
-print('Sequence\t FoundProtien')
-with open("data") as f:  # opening the file
-    for item in f:  # traversing the file object for each line
-        if(item[0] == '>'):
-            sequence = f.readline().rstrip()
-            if(isProtienValid(sequence)):  # code for checking stop sequence and triplets
-                # print("Found Stop sequence in", sequence)#this line prints
-                # the valid sequence
-                newlist = splitSequence(sequence)
-                lacid = ''.join(findAcid(newlist))
-                print('Sequence is', str(lacid))
-        else:  # ignoring the lines till a '>' is not found.
-            pass
+# ---------------------------------IMPORTING MODULES--------------------------------
+from rituparna import isProtienValid, splitSequence, findAcid, countOccurences
+import database
+# --------------------------------DRIVER FUNCTION-----------------------------------
+arr = []
+with open("Ecol_K12_MG1655_.ena") as f:  # opening the file
+    for line in f: # iterating over each line
+        if(line[0] == '>'):
+            # if lenght of array is > 0
+            # add the files to the database using the acid name
+            # also the other details like occurences of ATGC and others
+            # then, delete the array you created
+            if(len(arr)):
+                sequence = ''.join(arr) #sequence is the final codon sequence we have.
+                if(isProtienValid(sequence)):  # perfoming checks for valid protien
+                    print('Checking protien: {}'.format(ACID_LABEL),end='')
+                    newlist = splitSequence(sequence) #the sequence array is split in terms of three
+                    lacid = ''.join(findAcid(newlist))
+                    A,T,G,C = countOccurences(sequence)#counting the frequencies of the acids occured
+                    database.pushToDatabase(ACID_LABEL,sequence,lacid,A,T,G,C)
+            ACID_LABEL = line
+            arr.clear()
+        else:
+            arr.append(line.rstrip())
+# ----------------------------------------------------------------------------------
