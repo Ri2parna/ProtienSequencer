@@ -1,5 +1,5 @@
 # ProtienSequencer
-Software Engineering Project :
+## Software Engineering Project :
 	1. Set the configurations for the mongo db in the database.py file.
 	2. The project is Separated into modules ie, rituparna, database and main.
 		- The functions can be found in `rituparna.py`, the configurations for the database can be found in the `database.py` file.

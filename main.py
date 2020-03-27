@@ -3,7 +3,7 @@ from rituparna import isProtienValid, splitSequence, findAcid, countOccurences
 import database
 # --------------------------------DRIVER FUNCTION-----------------------------------
 arr = []
-with open("Ecol_K12_MG1655_.ena") as f:  # opening the file
+with open("assets/Ecol_K12_MG1655_.ena") as f:  # opening the file
     for line in f: # iterating over each line
         if(line[0] == '>'):
             # if lenght of array is > 0
