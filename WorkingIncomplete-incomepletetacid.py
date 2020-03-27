@@ -1,9 +1,9 @@
-from array import *
+# Use a Better Data Stucture to store these data
+# Proposed data Structure is --> n-ary Trees.
 class acid():
     def __init__(self,codons,acid):
         self.codons = codons
         self.acid = acid
-
 
 list = []
 list.append(acid('TTT','F'))

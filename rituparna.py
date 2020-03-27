@@ -74,7 +74,7 @@ def findAcid(newlist):
 		else:
 			replacedProtien.append(NULL)
 	return replacedProtien
-			
+
 
 
 #checking wether the protien is valid or not
