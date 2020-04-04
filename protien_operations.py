@@ -1,4 +1,4 @@
-#determining the acid structure
+# determining the acid structure
 acid = {}
 acid['TTT'] = 'F'
 acid['TTC'] = 'F'
@@ -86,19 +86,27 @@ def isProtienValid(_str_):
             return False
     else:
         return False
+
 def splitSequence(_str_):
 	newarray = []
 	for i in range(0,len(_str_),3):
 		newarray.append(_str_[i:i+3])
 	return newarray
+
 def countOccurences(_str_):
-	occurences = {
-		'a' : 0,
-		't' : 0,
-		'g' : 0,
-		'c' : 0
-	}
-	for item in _str_:
-		if(item in occurences):
-			occurences[item] += 1
-	return(occurences['a'],occurences['t'],occurences['g'],occurences['c'])
+	from collections import Counter
+	return(Counter(list(_str_)))
+# counter long form
+# def countOccurences(_str_):
+# 	occurences = {
+# 		'a' : 0,
+# 		't' : 0,
+# 		'g' : 0,
+# 		'c' : 0
+# 	}
+# 	for item in _str_:
+# 		if(item in occurences):
+# 			occurences[item] += 1
+# 	return(occurences['a'],occurences['t'],occurences['g'],occurences['c'])
+if __name__ == '__main__':
+	print(isProtienValid('uaa'))

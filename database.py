@@ -1,15 +1,16 @@
 import pymongo
 import matplotlib.pyplot as plt
 client = pymongo.MongoClient("mongodb://localhost:27017/")
-acidDatabase = client["acid_storage"]#acid Storage is the database name
-mycol = acidDatabase["storages_data"] #storage data is the collection name i.e. Table name
+acidDatabase = client["acid_storage"]  # acid Storage is the database name
+mycol = acidDatabase["storages_data"]  # storage data is the collection name i.e. Table name
 
 def plot(sequenceCount):
-	list = [x for x in sequenceCount.keys()]
+	"""funct to plot the given data in a graph"""
+	list_ = [x for x in sequenceCount.keys()]
 	key = [y for y in sequenceCount.values()]
 	plt.bar(sequenceCount.keys(), sequenceCount.values(), 1, color='g')
 	plt.show()
-	print(list,key)
+	print(list_,key)
 
 def pushToDatabase(ACID_LABEL,sequence, Acid, A,T,G,C):
 	mycol.insert_one({'LABEL':ACID_LABEL,'SEQUENCE': sequence,'CORR_ACID': Acid, 'A': A,'T':T,'G':G,'C':C})
