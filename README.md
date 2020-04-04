@@ -11,7 +11,7 @@
 
  1. The plotting of the histogram and the skew is yet to be done.
 
-## Done
+## Completed
 
  1. Found out corresponding Acid.
 
@@ -19,7 +19,7 @@
 
 ### Known bugs
 
- 1. In the acid , the last three characters are being replaced by 'stop'. This is to be solved , we need the acid, not the 'stop' symbol.
+ 1. None So Far.
 
 ### Resources
 
@@ -35,3 +35,5 @@
  3. Start mongo db server on `0.0.0.0:27017/`
  4. If you are using Docker, to run the database, use
  ```docker run --name storetest -p 27017-27019:27017-27019 mongo```
+ #### Notes: 
+ 1. The `requirements.txt` had to be removed due to various dependency bugs popping out in the repository.
