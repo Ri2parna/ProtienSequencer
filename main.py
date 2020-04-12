@@ -1,6 +1,7 @@
 # ---------------------------------IMPORTING MODULES--------------------------------
 from rituparna import isProtienValid, splitSequence, findAcid, countOccurences
 import database
+import plotting
 # --------------------------------DRIVER FUNCTION-----------------------------------
 arr = []
 with open("assets/Ecol_K12_MG1655_.ena") as f:  # opening the file
@@ -27,4 +28,4 @@ with open("assets/Ecol_K12_MG1655_.ena") as f:  # opening the file
 # ----------------------------------------------------------------------------------
 newDict = database.retrieveDatabase()
 print('returned sequence count is',newDict)
-database.plot(newDict)
+plotting.plot(newDict)
