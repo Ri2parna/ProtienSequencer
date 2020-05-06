@@ -4,6 +4,7 @@ class acid():
     def __init__(self,codons,acid):
         self.codons = codons
         self.acid = acid
+# TODO: Use N-ary trees to store this data.
 
 list = []
 list.append(acid('TTT','F'))
