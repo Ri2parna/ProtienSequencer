@@ -67,17 +67,16 @@ acid['GGG'] = 'G'
 
 
 def findAcid(newlist):
-	replacedProtien = []
-	for item in newlist:
-		if(item.upper() in acid):
-			replacedProtien.append(acid[item.upper()])
-		else:
-			replacedProtien.append(NULL)
-	return replacedProtien
+    replacedProtien = []
+    for item in newlist:
+        if(item.upper() in acid):
+            replacedProtien.append(acid[item.upper()])
+        else:
+            replacedProtien.append(NULL)
+    return replacedProtien
 
 
-
-#checking wether the protien is valid or not
+# checking wether the protien is valid or not
 def isProtienValid(_str_):
     if(_str_[-4:-1] == 'taa' or 'uaa' or _string_ == 'uag' or _string_ == 'uga'):
         if(len(_str_) % 3 == 0):  # checking for multiples of 3
@@ -87,15 +86,18 @@ def isProtienValid(_str_):
     else:
         return False
 
+
 def splitSequence(_str_):
-	newarray = []
-	for i in range(0,len(_str_),3):
-		newarray.append(_str_[i:i+3])
-	return newarray
+    newarray = []
+    for i in range(0, len(_str_), 3):
+        newarray.append(_str_[i:i + 3])
+    return newarray
+
 
 def countOccurences(_str_):
-	from collections import Counter
-	return(Counter(list(_str_)))
+    from collections import Counter
+    return(Counter(list(_str_)))
+
 # counter long form
 # def countOccurences(_str_):
 # 	occurences = {
@@ -108,5 +110,6 @@ def countOccurences(_str_):
 # 		if(item in occurences):
 # 			occurences[item] += 1
 # 	return(occurences['a'],occurences['t'],occurences['g'],occurences['c'])
+
 if __name__ == '__main__':
-	print(isProtienValid('uaa'))
+    print(isProtienValid('uaa'))

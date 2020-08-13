@@ -12,12 +12,16 @@ with open("assets/Ecol_K12_MG1655_.ena") as f:  # opening the file
             # also the other details like occurences of ATGC and others
             # then, delete the array you created
             if(len(arr)):
-                sequence = ''.join(arr)  # combining the list of triplets to a sequence string
+                # combining the list of triplets to a sequence string
+                sequence = ''.join(arr)
                 if(isProtienValid(sequence)):  # perfoming checks for valid protien
                     print('Checking protien: {}'.format(ACID_LABEL), end='')
-                    newlist = splitSequence(sequence)  # the sequence array is split in terms of triplet codons
-                    lacid = ''.join(findAcid(newlist))  # finding the corresponding acid
-                    A, T, G, C = countOccurences(sequence)  # counting the frequencies of the acids occured
+                    # the sequence array is split in terms of triplet codons
+                    newlist = splitSequence(sequence)
+                    # finding the corresponding acid
+                    lacid = ''.join(findAcid(newlist))
+                    # counting the frequencies of the acids occured
+                    A, T, G, C = countOccurences(sequence)
                     # database.pushToDatabase(ACID_LABEL,sequence,lacid,A,T,G,C)
                 else:
                     print('Entire Sequence Wrong.')

@@ -1,11 +1,12 @@
 from bokeh.plotting import figure
 from bokeh.io import output_file, save, reset_output, show
 
+
 def plot(plotValues):
 	labelsXaxis = [item for item in plotValues]
 	labelsYaxis = [plotValues[item] for item in plotValues]
-	p = figure(x_range=labelsXaxis,width=1100,title="Protien Sequencing")
-	p.vbar(x=labelsXaxis,top=labelsYaxis,width=0.4)
+	p = figure(x_range=labelsXaxis, width=1100, title="Protien Sequencing")
+	p.vbar(x=labelsXaxis, top=labelsYaxis, width=0.4)
 
 	# Set some properties to make the plot look better
 	p.xgrid.grid_line_color = None
@@ -16,10 +17,11 @@ def plot(plotValues):
 from math import cos, sin
 from bokeh.models import ColumnDataSource
 
+
 def modify_doc(doc):
     p = figure(match_aspect=True)
     p.circle(x=0, y=0, radius=1, fill_color=None, line_width=2)
-    
+
     # this is just to help the auto-datarange
     p.rect(0, 0, 2, 2, alpha=0)
 
@@ -29,9 +31,10 @@ def modify_doc(doc):
 
     def update():
         x, y = source.data['x'][-1], source.data['y'][-1]
-I know that procedure, i just wanted 
+I know that procedure, i just wanted
         # construct the new values for all columns, and pass to stream
-        new_data = dict(x=[x*cos(0.1) - y*sin(0.1)], y=[x*sin(0.1) + y*cos(0.1)])
+        new_data = dict(x=[x * cos(0.1) - y * sin(0.1)],
+                        y=[x * sin(0.1) + y * cos(0.1)])
         source.stream(new_dtsata, rollover=8)
 
     doc.add_periodic_callback(update, 150)
